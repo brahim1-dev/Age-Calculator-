@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+:root {
+	font-family: Inter, "Segoe UI", sans-serif;
+	color: #f5f5f8;
+	background: #19172d;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--surface: #09090b;
+	--accent: #77e4d0;
+	--muted: #aaa8b8;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+}
+
+button,
+input {
+	font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 4px;
+}
+
+.app-shell {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	padding: 8px 24px 10px;
+}
+
+.site-header {
+	text-align: center;
+}
+
+.site-header h1 {
+	margin: 0;
+	font-size: clamp(2rem, 4vw, 2.7rem);
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+.calculator {
+	width: min(100%, 615px);
+	align-self: center;
+	justify-self: center;
+	margin-top: -14px;
+}
+
+.calculator-form {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 172px;
+	align-items: center;
+	gap: 58px;
+	padding: 24px 20px;
+	border-radius: 7px;
+	background: var(--surface);
+	box-shadow: 0 12px 28px rgb(0 0 0 / 13%);
+}
+
+.calculator-form input,
+.calculator-form button {
+	height: 40px;
+	border: 0;
+	border-radius: 5px;
+	background: #fff;
+	color: #15151a;
+}
+
+.calculator-form input {
+	width: 100%;
+	padding: 0 14px;
+	color-scheme: light;
+}
+
+.calculator-form button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.calculator-form button:hover {
+	background: #e1faf5;
+}
+
+.calculator-form button:active {
+	transform: translateY(1px);
+}
+
+.age-results {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 39px;
+}
+
+.age-result {
+	width: 80px;
+	min-height: 80px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2px;
+	border-radius: 5px;
+	background: var(--surface);
+	box-shadow: 0 10px 24px rgb(0 0 0 / 12%);
+}
+
+.age-value {
+	color: var(--accent);
+	font-size: 1.5rem;
+	line-height: 1.15;
+	font-variant-numeric: tabular-nums;
+}
+
+.age-unit {
+	font-size: 0.8rem;
+}
+
+.site-footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	padding-top: 20px;
+	color: var(--muted);
+	font-size: 0.75rem;
+}
+
+.footer-credit {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.code-mark {
+	color: #f5f5f8;
+	font-weight: 700;
+}
+
+.heart {
+	color: #ff637f;
+}
+
+.site-footer a {
+	color: var(--accent);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+	color: #fff;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	clip-path: inset(50%);
+}
+
+@media (max-width: 600px) {
+	.app-shell {
+		padding: 14px 20px 12px;
+	}
+
+	.site-header h1 {
+		font-size: 2rem;
+	}
+
+	.calculator {
+		margin-top: -28px;
+	}
+
+	.calculator-form {
+		grid-template-columns: 1fr;
+		gap: 14px;
+		padding: 18px;
+	}
+
+	.calculator-form button {
+		width: 100%;
+	}
+
+	.age-results {
+		margin-top: 24px;
+	}
+
+	.age-result {
+		width: 76px;
+		min-height: 76px;
+	}
+}
